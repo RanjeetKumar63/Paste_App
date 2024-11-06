@@ -34,11 +34,11 @@ const Paste = () => {
   };
 
   return (
-    <div className="border-[3px] py-3 mt-5 bg-gray-200 rounded-md">
+    <div className="border-[1px] py-3 mt-5 bg-gray-300 rounded-md">
       <input
         className="p-2 rounded-2xl min-w-[50%] mt-5 "
         type="search"
-        placeholder="search here"
+        placeholder="Search here"
         value={searchTerm}
         onChange={(e) => setSearcTerm(e.target.value)}
       />
@@ -55,14 +55,14 @@ const Paste = () => {
                 </div>
 
                 <div className="flex flex-row gap-1 place-content-end mt-2">
-                  <button className="bg-blue-600 w-[4rem] h-8 rounded-full">
+                  <button className="bg-blue-800 w-[4rem] h-8 rounded-full text-white">
                     <a href={`/?pasteId=${paste?._id}`}>Edit</a>
                   </button>
-                  <button className="bg-yellow-300 w-14 rounded-full">
+                  <button className="bg-yellow-500 w-14 rounded-full text-white">
                     <a href={`/pastes/${paste?._id}`}>View</a>
                   </button>
                   <button
-                    className="bg-red-600 w-14 rounded-full"
+                    className="bg-red-600 w-14 rounded-full text-white"
                     onClick={() => handleDelete(paste?._id)}
                   >
                     Delete
@@ -77,7 +77,7 @@ const Paste = () => {
                     Copy
                   </button>
                   <button
-                    className="bg-green-600 w-14 rounded-full"
+                    className="bg-green-700 w-14 rounded-full text-white"
                     onClick={handleShare}
                   >
                     Share

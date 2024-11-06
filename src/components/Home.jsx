@@ -52,7 +52,7 @@ const Home = () => {
         />
         <button
           onClick={createPaste}
-          className="p-2 rounded-2xl mt-2 bg-blue-800 text-white font-sans"
+          className="p-2 rounded-2xl mt-2 bg-blue-800 text-white font-sans "
         >
           {pasteId ? "Update My Paste" : "Create My Paste"}
         </button>
@@ -64,7 +64,6 @@ const Home = () => {
           placeholder="Enter content here"
           onChange={(e) => setValue(e.target.value)}
           rows={20}
-          cols={80}
         ></textarea>
       </div>
     </div>
