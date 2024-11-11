@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromPastes } from "../redux/pasteSlice";
 import toast from "react-hot-toast";
+import { TbEdit } from "react-icons/tb";
+import { LuView } from "react-icons/lu";
+import { RiDeleteBin5Fill } from "react-icons/ri";
+import { RxCopy } from "react-icons/rx";
+import { IoMdShare } from "react-icons/io";
 
 const Paste = () => {
   const pastes = useSelector((state) => state.paste.pastes);
@@ -54,36 +59,41 @@ const Paste = () => {
                   <h3 className="text-2xl font-sans mt-2">{paste.content}</h3>
                 </div>
 
-                <div className="flex flex-row gap-1 place-content-end mt-2">
-                  <button className="bg-blue-800 w-[4rem] h-8 rounded-full text-white">
-                    <a href={`/?pasteId=${paste?._id}`}>Edit</a>
+                <div className="flex flex-row gap-4 place-content-end mt-2 pr-4">
+                  <button className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 ">
+                    <a href={`/?pasteId=${paste?._id}`}>
+                      {" "}
+                      <TbEdit />
+                    </a>
                   </button>
-                  <button className="bg-yellow-500 w-14 rounded-full text-white">
-                    <a href={`/pastes/${paste?._id}`}>View</a>
+                  <button className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 ">
+                    <a href={`/pastes/${paste?._id}`}>
+                      <LuView />
+                    </a>
                   </button>
                   <button
-                    className="bg-red-600 w-14 rounded-full text-white"
+                    className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 "
                     onClick={() => handleDelete(paste?._id)}
                   >
-                    Delete
+                    <RiDeleteBin5Fill />
                   </button>
                   <button
-                    className="bg-gray-100 w-14 rounded-full"
+                    className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 "
                     onClick={() => {
                       navigator.clipboard.writeText(paste?.content);
                       toast.success("copied to clipboard");
                     }}
                   >
-                    Copy
+                    <RxCopy />
                   </button>
                   <button
-                    className="bg-green-700 w-14 rounded-full text-white"
+                    className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 "
                     onClick={handleShare}
                   >
-                    Share
+                    <IoMdShare />
                   </button>
                 </div>
-                <div>{paste.createdAt}</div>
+                <div className="flex justify-end pr-4">{paste.createdAt}</div>
               </div>
             );
           })}
