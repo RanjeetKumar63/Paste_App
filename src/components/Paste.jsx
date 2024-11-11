@@ -39,7 +39,7 @@ const Paste = () => {
   };
 
   return (
-    <div className="border-[1px] py-3 mt-5 bg-gray-300 rounded-md">
+    <div className="border py-3 mt-5 bg-gray-500 rounded-md text-white">
       <input
         className="p-2 rounded-2xl min-w-[50%] mt-5 "
         type="search"
@@ -53,32 +53,36 @@ const Paste = () => {
             return (
               <div className="border" key={paste?._id}>
                 <div>
-                  <h1 className="text-2xl font-semibold mt-2">{paste.title}</h1>
+                  <h1 className="text-2xl font-semibold mt-2 flex justify-start pl-2 text-white">
+                    {paste.title}
+                  </h1>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-sans mt-2">{paste.content}</h3>
+                  <h3 className="text-1xl font-sans mt-2 flex justify-start pl-2">
+                    {paste.content}
+                  </h3>
                 </div>
 
                 <div className="flex flex-row gap-4 place-content-end mt-2 pr-4">
-                  <button className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 ">
+                  <button className="border-solid border-2 border-sky-500 bg-gray-900 w-7 h-6 pl-1 ">
                     <a href={`/?pasteId=${paste?._id}`}>
                       {" "}
                       <TbEdit />
                     </a>
                   </button>
-                  <button className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 ">
+                  <button className="border-solid border-2 border-sky-500 bg-gray-900 w-7 h-6 pl-1 ">
                     <a href={`/pastes/${paste?._id}`}>
                       <LuView />
                     </a>
                   </button>
                   <button
-                    className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 "
+                    className="border-solid border-2 border-sky-500 bg-gray-900 w-7 h-6 pl-1 "
                     onClick={() => handleDelete(paste?._id)}
                   >
                     <RiDeleteBin5Fill />
                   </button>
                   <button
-                    className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 "
+                    className="border-solid border-2 border-sky-500 bg-gray-900 w-7 h-6 pl-1 "
                     onClick={() => {
                       navigator.clipboard.writeText(paste?.content);
                       toast.success("copied to clipboard");
@@ -87,7 +91,7 @@ const Paste = () => {
                     <RxCopy />
                   </button>
                   <button
-                    className="border-solid border-2 border-gray-500 bg-gray-100 w-7 h-6 pl-1 "
+                    className="border-solid border-2 border-sky-500 bg-gray-900 w-7 h-6 pl-1 "
                     onClick={handleShare}
                   >
                     <IoMdShare />
