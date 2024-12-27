@@ -39,7 +39,7 @@ const Paste = () => {
   };
 
   return (
-    <div className="border py-3 mt-5 bg-gray-500 rounded-md text-white">
+    <div className="border py-3 mt-5 bg-gray-200 rounded-md text-white">
       <input
         className="p-2 rounded-2xl min-w-[50%] mt-5 "
         type="search"
@@ -53,12 +53,12 @@ const Paste = () => {
             return (
               <div className="border" key={paste?._id}>
                 <div>
-                  <h1 className="text-2xl font-semibold mt-2 flex justify-start pl-2 text-white">
+                  <h1 className="text-2xl font-semibold mt-2 flex justify-start pl-2 text-black">
                     {paste.title}
                   </h1>
                 </div>
                 <div>
-                  <h3 className="text-1xl font-sans mt-2 flex justify-start pl-2">
+                  <h3 className="text-1xl font-sans mt-2 flex justify-start pl-2 text-blue-700">
                     {paste.content}
                   </h3>
                 </div>
