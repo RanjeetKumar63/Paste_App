@@ -97,7 +97,9 @@ const Paste = () => {
                     <IoMdShare />
                   </button>
                 </div>
-                <div className="flex justify-end pr-4">{paste.createdAt}</div>
+                <div className="flex justify-end pr-4 text-black">
+                  {paste.createdAt}
+                </div>
               </div>
             );
           })}
