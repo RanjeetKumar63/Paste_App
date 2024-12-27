@@ -41,7 +41,7 @@ const Paste = () => {
   return (
     <div className="border py-3 mt-5 bg-gray-200 rounded-md text-white">
       <input
-        className="p-2 rounded-2xl min-w-[50%] mt-5 "
+        className="p-2 rounded-2xl min-w-[50%] mt-5 text-black"
         type="search"
         placeholder="Search here"
         value={searchTerm}
